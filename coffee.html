@@ -51,24 +51,23 @@
     var myRevenueMessage = document.getElementById("revenue");
  
     $('#coffee_image').attr('src', "static/coffee_beans.jpg");
-    // from JS:
+    // changing src of image from JS:
     // var myImage = document.getElementById("coffee_image");
     // myImage.setAttribute('src', "static/coffee_beans.jpg");
 
-
+    // function call from JS:
     // myImage.addEventListener('click', function () {
     //     return makeCoffee("brew");
     // });
 
+    $('#coffee_image').on('click', makeCoffee);
 
-
-    $('#coffee_image').on('click', function() {makeCoffee("brew")});
-
-    function makeCoffee() {
+    function makeCoffee(evt) {
          $('#coffee_image').attr('src', "static/coffee_machine.jpg");
             // from JS: myImage.src = "static/coffee_machine.jpg";
-         setTimeout(function() { $('#coffee_image').attr('src', "static/coffee_mug.jpg"); }, 3000);
-         setTimeout(function() { $('#coffee_image').attr('src', "static/coffee_beans.jpg"); }, 6000);
+         setTimeout(function() { $('#coffee_image').attr('src', "static/coffee_mug.jpg"); }, 1500);
+         setTimeout(function() { $('#coffee_image').attr('src', "static/coffee_beans.jpg"); }, 2000);
+         //the jquery attr method needs to be passed in *function-wrapper*. Otherwise, the browser runs the function immediately.//
     }
 
 </script>
