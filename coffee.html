@@ -11,7 +11,7 @@
     <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
     <script src="https://code.jquery.com/jquery.js"></script>
-    
+
 </head>
 <body>
 <div class="container">
@@ -47,15 +47,19 @@
 </div>
 
 <script>
-
-    var myImage = document.getElementById("coffee_image");
+ 
     var myRevenueMessage = document.getElementById("revenue");
+ 
+    $('#coffee_image').attr('src', "static/coffee_beans.jpg");
+    // from JS:
+    // var myImage = document.getElementById("coffee_image");
+    // myImage.setAttribute('src', "static/coffee_beans.jpg");
 
-    myImage.setAttribute('src', "static/coffee_beans.jpg");
 
-    myImage.addEventListener('click', function () {
-        return makeCoffee("brew");
-    });
+    // myImage.addEventListener('click', function () {
+    //     return makeCoffee("brew");
+    // });
+    // $('#coffee_image').on('click', function() {makeCoffee("brew")});
 
     function makeCoffee() {
          myImage.src = "static/coffee_machine.jpg";
